@@ -1,0 +1,6 @@
+# Vim's temporary files
+*.swp
+*.swo
+
+# Gemfile.lock should be versioned only for applications, not for libraries
+Gemfile.lock

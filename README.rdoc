@@ -1,0 +1,30 @@
+= ie7-js-rails
+IE7.js is a JavaScript library to make Microsoft Internet Explorer behave like a standards-compliant browser. It fixes many HTML and CSS issues and makes transparent PNG work correctly under IE5 and IE6. See http://code.google.com/p/ie7-js/
+
+This gem packages IE7.js for convenient use within Rails asset pipeline.
+
+== Installation and usage
+=== Declare dependency in your Gemfile
+Add the following line in your Gemfile:
+    gem 'ie7-js-rails'
+
+Then run:
+    bundle install
+
+=== Include the scripts you want in your layout
+    # app/views/layouts/application.html.haml
+    !!! 5
+    %html
+        %head
+            /[if lt IE 9]
+                -# Choose only one of the IE*.js scripts
+                =# javascript_include_tag "IE7"
+                =# javascript_include_tag "IE8"
+                = javascript_include_tag "IE9"
+                = javascript_include_tag "ie7-squish"
+    ...
+
+== License
+IE7.js: Copyright (c) 2004-2010 Dean Edwards, released under the MIT license
+
+ie7-js-rails: Copyright (c) 2012 Kamil Śliwak, released under the MIT license
